@@ -1,0 +1,9 @@
+{
+  "name": "Giraf",
+  "version": "0.0.1",
+  "dependencies": {
+    "pure": "*",
+    "pure-extras": "*",
+    "css-modal": "*"
+  }
+}

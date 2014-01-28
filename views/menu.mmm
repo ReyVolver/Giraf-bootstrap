@@ -1,0 +1,40 @@
+<div id="menu">
+    <div class="pure-menu pure-menu-open">
+    {{#loggeduser}}
+        <div class="pure-g" id="profil">
+            <div class="pure-u-1-4" id="userimage">
+                <img src="{{path}}">
+            </div>
+            <div class="pure-u-3-4" id="userinfo">
+                <div class="pure-g"> 
+                    <div class="pure-u-1" id="username"><!-- User name -->
+                        <h2>{{firstname}} {{lastname}}<span></span></h2>
+                    </div>
+
+                </div>
+                <div class="pure-g">
+                    <div class="pure-u-1" id="lprofil"><a href="/users/me">Mon Profil</a></div>
+
+                </div>
+            </div>
+
+        </div>
+
+        {{! <div class="menu-one"> }}
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                {{#usermenu.promotions}}
+                <li class="pure-menu-selected menu-item-divided">
+                    <a href="/promotion/{{name}}">Promotion {{name}}</a>
+                    <ul>
+                        {{#classes}}
+                            <li><a href="/classes/{{_id}}">{{name}}</a></li>
+                        {{/classes}}
+                    </ul>
+                </li>
+                {{/usermenu.promotions}}
+            </ul>
+        {{! </div> }}
+        {{/loggeduser}}
+    </div>
+</div>
