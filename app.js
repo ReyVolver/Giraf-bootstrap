@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -10,12 +9,12 @@ var express = require('express'),
 	mongoose = require('mongoose'),
 	fs = require('fs'),
 	mmm = require('mmm'),
+	config = require('config/config')
     flash = require('./routes/middlewares/flash-message.js');
 
-	// config = require('config/config');
 
 // Bootstrap db connection
-var db = mongoose.connect('mongodb://localhost/giraf');
+var db = mongoose.connect(config.db);
 
 // Bootstrap models
 var models_path = __dirname + '/models';
@@ -51,8 +50,8 @@ app.use(express.urlencoded());
 app.use(express.bodyParser());
 app.use(expressValidator());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
-app.use(express.session({secret: "THISISABLOWFISH"}));
+app.use(express.cookieParser(config.cookie.secret));
+app.use(express.session(config.session.secret));
 app.use(flash());
 app.use(app.router);
 
