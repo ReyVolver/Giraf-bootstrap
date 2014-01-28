@@ -46,7 +46,6 @@ exports.signup = function(req, res){
 
 	res.locals.err = req.validationErrors(true);
 	res.locals.user = req.body;
-	console.log(res.locals.err);
 	if ( res.locals.err ) {
 		return res.render('login', {user: req.body});
 	}

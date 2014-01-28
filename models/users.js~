@@ -1,6 +1,9 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
-    crypto = require('crypto');
+    crypto = require('crypto'),
+    ClassSchema = require('./classes'),
+    PromotionSchema = require('./promotions'),
+    FileSchema = require('./files');
 
 /**
  * User Schema

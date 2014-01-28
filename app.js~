@@ -9,7 +9,7 @@ var express = require('express'),
 	mongoose = require('mongoose'),
 	fs = require('fs'),
 	mmm = require('mmm'),
-	config = require('./config/config')
+	config = require('config/config')
     flash = require('./routes/middlewares/flash-message.js');
 
 

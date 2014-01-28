@@ -4,6 +4,7 @@
  */
 
 var index = require('../controllers/index'),
+	users = require('../controllers/users'),
     checkAuth = require('./middlewares/checkAuth');
 
 module.exports = function(app){
